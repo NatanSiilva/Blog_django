@@ -1,5 +1,5 @@
 from pathlib import Path
-from django.contrib.messages import constants 
+from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog-django-mysql',
+        'NAME': 'blog_django',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'USER': 'root',
