@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from django.views.generic import UpdateView
 from .models import Post
 from django.db.models import Q, Count, Case, When
+from comments.forms import FormComment
 
 
 class PostIndex(ListView):
@@ -67,4 +68,7 @@ class PostCategories(PostIndex):
 
 
 class PostDetails(UpdateView):
-    pass
+    template_name = 'posts/post_details.html'
+    model = Post
+    form_class = FormComment
+    context_object_name = 'post'
