@@ -3,7 +3,7 @@
 <div class="card-columns mt-4">
   <!-- FOR LOOP -->
   {% for post in posts %}
-    {% if post.published_post %}
+    <!-- {% if post.published_post %} -->
       <div class="card">
         {% if post.image_post %}
           <a href="{% url 'post_details' post.id %}">
@@ -22,7 +22,7 @@
           <p class="card-text">{{ post.excerpt_post }}</p>
           <p class="card-text">
             <small class="text-muted">
-              {{ post.date_post|naturalday|title }} | {{ post.num_comments }}
+              {{ post.date_post|naturalday| title }} | {{ post.num_comments }}
               comentário(s) | {{ post.category_post }}
             </small>
           </p>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </div>
-    {% endif %}
+    <!-- {% endif %} -->
   {% endfor %}
   <!--/FOR LOOP-->
 </div>

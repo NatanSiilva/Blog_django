@@ -42,6 +42,7 @@
         class="form-inline my-2 my-lg-0 ml-lg-4"
         action="{% url 'post_search' %}"
       >
+        {% csrf_token %}
         <input
           name="search"
           value="{{request.GET.search}}"
