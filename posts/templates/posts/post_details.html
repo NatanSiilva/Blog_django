@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %} {{  post.title_post  }} | {% endblock %} 
 
@@ -66,9 +67,11 @@
 
       {% for visible_field in form.visible_fields %}
         <div class="form-group">
-          {{ visible_field.label_tag }} <br/>
+          <!-- {{ visible_field.label_tag }} <br/>
           {{ visible_field }}
-          {{ visible_field.errors }}
+          {{ visible_field.errors }} -->
+
+          {{ visible_field|as_crispy_field }}
         </div>
       {% endfor %}
 
