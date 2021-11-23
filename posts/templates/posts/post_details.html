@@ -66,14 +66,14 @@
       {% endfor %}
 
       {% for visible_field in form.visible_fields %}
-        <div class="form-group">
           <!-- {{ visible_field.label_tag }} <br/>
           {{ visible_field }}
           {{ visible_field.errors }} -->
-
           {{ visible_field|as_crispy_field }}
-        </div>
       {% endfor %}
+
+      <div class="g-recaptcha" data-sitekey="6LefLVIdAAAAALIQxUs0JrIWbQd0rs8K7OkFEJwp"></div>
+      <br/>
 
       {% include "partials/_messages.html"%}
       <input
