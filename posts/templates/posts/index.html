@@ -1,4 +1,9 @@
-{% extends 'base.html' %} {% load humanize %} {% block content %}
+{% extends 'base.html' %}
+<!-- Filtro humanize -->
+{% load humanize %}  
+{% load filters %}  
+
+{% block content %}
 <!-- CONTENT -->
 <div class="card-columns mt-4">
   <!-- FOR LOOP -->
@@ -22,8 +27,9 @@
           <p class="card-text">{{ post.excerpt_post }}</p>
           <p class="card-text">
             <small class="text-muted">
-              {{ post.date_post|naturalday| title }} | {{ post.num_comments }}
-              comentário(s) | {{ post.category_post }}
+              {{ post.date_post|naturalday| title }} |
+              {{ post.num_comments|plural_comments }} 
+              {{ post.category_post }}
             </small>
           </p>
 
@@ -36,5 +42,11 @@
   {% endfor %}
   <!--/FOR LOOP-->
 </div>
+
+<!-- {{ connection.queries|length }}
+
+<p>
+  {{ connection.queries }}
+</p> -->
 
 {% include 'partials/_pagination.html' %} {% endblock %}
